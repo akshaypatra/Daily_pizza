@@ -9,7 +9,10 @@
     <h1>Order a Pizza</h1>
     <form action="{% url 'order' %}" method="post">
          {% csrf_token %}
-        <label for="topping1" >Topping 1:</label>
+
+        <!-- DO NOT REQUIRED THE FOLLOWING TAGS AS WE HAVE USED DJANGO FORMS  -->
+
+        <!-- <label for="topping1" >Topping 1:</label>
         <input id="topping1" type="text" name="topping1"  />
 
         <label for="topping2" >Topping 2:</label>
@@ -20,7 +23,9 @@
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="large">Large</option>
-        </select>
+        </select> -->
+        
+        {{pizzaform}}
 
         <input type="submit"  value="Order Pizza" />
     </form>
