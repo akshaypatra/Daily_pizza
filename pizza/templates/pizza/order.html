@@ -9,7 +9,8 @@
     <h1>Order a Pizza</h1>
 
     <h2>{{ note }}</h2>
-    <form action="{% url 'order' %}" method="post">
+    <form  action="{% url 'order' %}" method="post">    
+        <!-- ADD THIS ABOVE TO ACCEPT FILES : enctype="multipart/form-data" -->
          {% csrf_token %}
 
         <!-- DO NOT REQUIRED THE FOLLOWING TAGS AS WE HAVE USED DJANGO FORMS  -->
@@ -30,6 +31,14 @@
         {{pizzaform}}
 
         <input type="submit"  value="Order Pizza" />
+    </form>
+
+    <br><br>
+    Want more than one pizza ?
+    <form action="{% url 'pizzas' %}" method="get">
+        {{multiple_form}}
+        <input type="submit" value="Get Pizzas" />
+
     </form>
 </body>
 </html>
