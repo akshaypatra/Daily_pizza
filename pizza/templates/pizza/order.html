@@ -15,7 +15,7 @@
     {% endif %}
 
 
-    <form  action="{% url 'order' %}" method="post">    
+    <form  action="{% url 'order' %}" method="post" >    
         <!-- ADD THIS ABOVE TO ACCEPT FILES : enctype="multipart/form-data" -->
          {% csrf_token %}
 
